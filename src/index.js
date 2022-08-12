@@ -4,9 +4,12 @@ import mongoose from 'mongoose'
 const app = express()
 
 //Data Base conncet
-mongoose.connect('mongodb://localhost:27018/rmDB', (err, res) => {
-    if (err) throw err
-    console.log('DB en linea')
-})
 
-app.listen(3000, () => console.log('Server on port 3000'))
+async function main(){
+   await mongoose.connect('mongodb://localhost:27017/test')
+   
+   app.listen(3000, () => console.log('Server on port 3000'))
+}
+
+main().catch(err => console.log(err))
+
