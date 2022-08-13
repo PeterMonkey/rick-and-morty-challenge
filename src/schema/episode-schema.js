@@ -4,7 +4,7 @@ const {model, Schema} = mongoose
 const episodeSchema = new Schema({
     name: String,
     episode: String,
-    location: [String]
+    character: [String]
 })
 
 const episodeModel = model('Episode', episodeSchema)

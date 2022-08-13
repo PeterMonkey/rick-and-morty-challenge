@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import setCharacters from './services/character-services.js'
 import setLocation from './services/location-services.js'
 import setEpisode from './services/episode-services.js'
+import episodeLocation from './controllers/episodeLocation.js'
 
 dotenv.config()
 
@@ -13,9 +14,11 @@ const app = express()
 
 async function main(){
    mongoose.connect(process.env.DB_MONGO)
-   await setEpisode()
+   //await setEpisode()
    //await setLocation()
    //await setCharacters()
+   await episodeLocation()
+ 
    app.listen(3000, () => console.log('Server on port 3000'))
 }
 

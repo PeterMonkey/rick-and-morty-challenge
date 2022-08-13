@@ -22,9 +22,9 @@ const setCharacters = async () => {
     try{
       const req = await fetch(url+i)
       const res = await req.json()
-      const newCharacter = new characterModel({name:res.name})
+      const newCharacter = new characterModel({name:res.name, origin:res.origin.name, id:res.id})
       newCharacter.save()
-      console.log(res)
+      //console.log(res.origin.name)
     }catch(error){
       console.log(error)
     }

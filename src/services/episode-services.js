@@ -21,9 +21,11 @@ const setEpisode = async () => {
       try{
         const req = await fetch(url+i)
         const res = await req.json()
-        //const newEpisode = new episodeModel({name:res.name})
-        //newEpisode.save()
-        console.log(res)
+        const charsId = res.characters.map(character => character.split('/').pop()).join(',')
+        
+        const newEpisode = new episodeModel({name:res.name, episode:res.episode, character:charsId})
+        newEpisode.save()
+        //console.log(res)
       }catch(error){
         console.log(error)
       }

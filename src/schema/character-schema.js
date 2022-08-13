@@ -2,7 +2,9 @@ import mongoose from 'mongoose'
 const {model, Schema} = mongoose
 
 const characterSchema = new Schema({
-    name: String
+    id: String,
+    name: String,
+    origin: String
 })
 
 const characterModel = model('Character', characterSchema)

@@ -23,7 +23,7 @@ const setLocation = async () => {
         const res = await req.json()
         const newLocation = new locationModel({name:res.name})
         newLocation.save()
-        console.log(res)
+        //console.log(res)
       }catch(error){
         console.log(error)
       }
