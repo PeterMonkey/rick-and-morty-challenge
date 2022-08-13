@@ -1,4 +1,5 @@
-import {model, nodel, Schema} from 'mongoose'
+import mongoose from 'mongoose'
+const {model, Schema} = mongoose
 
 const locationSchema = new Schema({
     name: String
